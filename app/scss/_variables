@@ -1,0 +1,5 @@
+$base-font: 'Roboto Slab', serif;
+$base-bold-font: 'montserratbold';
+$base-2nd-font: 'montserratregular';
+$base-color: #0ed8d6;
+$base-dark-color: #222222;

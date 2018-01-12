@@ -1,0 +1,64 @@
+@mixin base-button {
+	width: 180px;
+	padding: 15px 0px;
+	background-color: $base-color;
+	color: #fff;
+	border: none;
+	text-transform: uppercase;
+	border-radius: 0;
+}
+
+@mixin hover {
+		background-color: #fff;
+		color: $base-color;
+	} 
+
+@mixin italic-font {
+	font-family: 'Droid Serif', serif;
+	font-weight: 400;
+	letter-spacing: 1px;
+}
+
+@mixin overlay {
+	background-blend-mode:overlay;
+	background-color: $base-dark-color;
+}
+
+@mixin horizontal-center {
+	left:0;
+	right:0;
+	margin:auto;
+}
+
+@mixin vertical-center {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+@mixin image-as-background {
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+@mixin services-icons {
+	height: 70px;
+	width: 70px;
+	line-height: 70px;
+	font-size: 250%;
+	border: 1px solid $base-color;
+	border-radius: 50%;
+	background-color: $base-color;
+	color: #fff;
+}
+
+@mixin social-media {
+	height: 30px;
+	width: 30px;
+	line-height: 30px;
+	border: none;
+	border-radius: 50%;
+	background-color: $base-dark-color;
+	color: #fff;
+	margin: 5px;
+}

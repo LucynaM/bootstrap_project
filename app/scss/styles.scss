@@ -1,0 +1,330 @@
+@import "variables";
+@import "mixins";
+
+	/*General styles -- Start*/
+
+body {
+	font-family: $base-font;
+}
+
+.italic {
+	@include italic-font;
+}
+
+h1, h3, h5, .btn-my-styling {
+	font-family: $base-bold-font;
+}
+
+@media (max-width: 460px) {
+	h3 {
+		font-size: 1em;
+	}
+	h1 {
+		font-size: 1.5em;
+	}
+}
+
+.btn-my-styling {
+	@include base-button;
+}
+
+.btn-my-styling:hover {
+	@include hover;
+}
+
+.social-media i {
+	@include social-media
+	&:hover {
+		background-color: $base-color;
+	}	
+}
+
+/*General styles -- Stop*/
+
+/*Navigation -- Start*/
+
+#main-nav {
+	background-color: rgba(255,255,255,0);
+	border: 0px;
+	a.navbar-brand {
+		color: #fff;
+		cursor: default;
+	}
+	ul {
+		li {	
+			font-family: $base-2nd-font;
+			a {
+				color: #fff;
+				&:hover {
+					color: $base-color;
+				}
+			}
+		}
+	}
+}
+
+#main-nav.nav-scroll {
+		background-color: #f7f7f7;
+		border: 0px;
+		a.navbar-brand {
+			color: #777;
+		}
+		ul {
+			li {	
+				a {
+					color: #777;
+					&:hover {
+						color: $base-color;
+					}
+				}
+			}
+		}
+	}
+
+
+@media (max-width: 768px) {
+	#main-nav {
+		background-color: rgb(255,255,255);
+		border: 0px;
+	}
+	#main-nav a.navbar-brand {
+		color: #777;
+	}
+	#main-nav ul li a {
+		color: #777;
+	}
+}
+
+/*Navigation -- Stop*/
+
+/*Header -- Start*/
+
+#header {
+	background-image: url("../img/header/pictures_on_the_wall-small.jpg");
+	@include image-as-background;
+	background-position: center;
+	@include overlay;
+	height: 100vh;
+	position: relative;
+	color: #fff;
+	.row {
+		@include vertical-center; 
+		@include horizontal-center;
+		a {
+			margin-top: 30px;
+		}
+	}
+}
+
+/*Header -- Stop*/
+
+/*Section general - Start*/
+
+#services, #portfolio, #team, #contact {
+	padding: 100px 0px;
+}
+
+section .row:first-child  {
+	margin-bottom: 50px;
+}
+
+#services h3, #portfolio h3, #team h3, #contact h3 {
+	margin-bottom: 25px;
+}
+
+#services .col-md-4 h5, #portfolio .col-md-4 h5, #team .col-md-4 h5, #contact .col-md-4 h5 {
+	margin-top: 25px;
+}
+
+
+/*Section general - Stop*/
+
+/*Services - Start*/
+
+#services {
+	padding-bottom: 65px;
+	.col-md-4 {
+		h5 {
+			margin-bottom: 20px;
+		}
+		p {
+			margin-bottom: 50px;
+		}
+		.services-icons {
+			@include services-icons;
+			&:hover {
+				@include hover;
+			}
+		}
+	}
+}
+
+/*Services - Stop*/
+
+
+/*Portfolio - Start*/
+
+#portfolio {
+	background-color: #f7f7f7;
+	.row:first-child  {
+		margin-bottom: 35px;
+		 h5 {
+			margin: 25px 0px;
+		}
+	}
+	.col-md-4, .col-sm-6 {
+		padding: 15px;
+		.portfolio-image-container {
+			height: 300px;
+			max-width: 360px;
+			@include horizontal-center;
+			overflow: hidden;
+			.portfolio-image {
+				@include image-as-background;
+				background-position: bottom;
+				height: 100%;
+				.portfolio-mask {
+					height: 100%;
+					background-color: rgba(14,216,214, 0.5);
+					opacity: 0;
+					height: 100%;
+					position: relative;
+					&:hover {
+						opacity: 1;
+					}
+					i {
+						width: 100%;
+						color: #fff;
+						@include vertical-center; 
+						@include horizontal-center;
+					}
+				}
+			}
+			&:hover .portfolio-image {
+				transform: scale(1.2,1.2);
+				transition: 2s;
+			}
+		}
+		.portfolio-image-descr {
+			background-color: #fff;
+			padding: 15px 0px;
+			max-width: 360px;
+			@include horizontal-center;
+			h5 {
+				margin: 15px 0px 10px;
+			}
+		}
+	}
+}
+
+
+#portfolio-image-1 {
+	background-image: url(../img/portfolio/chestnut_on_bracket-small.jpg);
+}
+#portfolio-image-2 {
+	background-image: url(../img/portfolio/typing_on_laptop-small.jpg);
+}
+#portfolio-image-3 {
+	background-image: url(../img/portfolio/child_with_blue_paint-small.jpg);
+}
+
+#portfolio-image-4 {
+	background-image: url(../img/portfolio/chaotic_paint-small.jpg);
+}
+
+#portfolio-image-5 {
+	background-image: url(../img/portfolio/house_with_blue_doors-small.jpg);
+}
+
+#portfolio-image-6 {
+	background-image: url(../img/portfolio/box_of_cookies-small.jpg);
+}
+
+/*Portfolio - Stop*/
+
+/*Team - Start*/
+#team {	
+	.col-md-4 {
+		margin: 20px 0px 50px;
+		.round-shape {
+			width: 250px;
+			height: 250px;
+			border: none;
+			border-radius: 50%;
+			@include horizontal-center;
+			background-position: center;
+			@include image-as-background;
+			margin-bottom: 25px;
+		}
+		
+	}
+} 
+
+#team-image-1 {
+	background-image: url(../img/team/man-1-small.jpg);
+}
+#team-image-2 {
+	background-image: url(../img/team/man-2-small.jpg);
+}
+
+#team-image-3 {
+	background-image: url(../img/team/woman-1-small.jpg);
+}
+
+
+/*Team - Stop*/
+
+/*Contact - Start*/
+
+#contact {
+	background-image: url(../img/footer/world-map.jpg);
+	@include image-as-background;
+	@include overlay;
+	h3, h5 {
+		color: #fff;
+	}
+	input, textarea {
+		margin: 15px 0px;
+		border: none;
+	}
+	input[type="text"], textarea {
+		width: 100%;
+		padding: 14px 0px;
+		text-transform: uppercase;
+		text-indent: 15px;
+		font-size: 0.9em;
+		font-family: $base-2nd-font;
+		&:focus {
+			border: inherit;
+			background-color: #f7f7f7;
+		}
+	}
+	textarea {
+		height: 198px;
+	}
+}
+
+/*Contact - Stop*/
+
+/*Footer - Start*/
+
+#footer {
+	padding: 15px 0px;
+	.footer-text {
+		font-size: 0.8em;
+		padding: 10px 0px;
+	}
+
+}
+
+@media (max-width: 768px) {
+	#footer .footer-text {
+		text-align: center;
+	}
+}
+
+
+/*Footer - Stop*/
+
+
+
